@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 /**
  * main - Entry point
@@ -7,12 +7,12 @@
  */
 int main(void)
 {
-char low, e, q;
-e = 'e';
-q = 'q';
+char low, j, a;
+j = 'j';
+a = 'a';
 for (low = 'a'; low <= 'z'; low++)
 {
-if (low != e && low != q) 
+if (low != j && low != a) 
 putchar(low);
 }
 putchar('\n');
