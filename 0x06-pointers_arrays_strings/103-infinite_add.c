@@ -1,72 +1,45 @@
 #include "main.h"
 /**
- * rev_string - reverse array
- * @n: integer params
- * Return: 0
- */
-void rev_string(char *n)
-{
-int i = 0;
-int j = 0;
-char temp;
-while (*(n + i) != '\0')
-{
-i++;
-}
-i--;
-for (j = 0; j < i; j++, i--)
-{
-temp = *(n + j);
-*(n + j) = *(n + i);
-*(n + i) = temp;
-}
-}
-/**
- * infinite_add - add 2 numbers together
- * @n1: text representation of 1st number to add
- * @n2: text representation of 2nd number to add
- * @r: pointer to buffer
- * @size_r: buffer size
- * Return: pointer to calling function
- */
+*infinite_add - a program that adds two numbers
+*@n1: first number to be added
+*@n2: second number to be added
+*@r: buffer that the function can use to store it's result
+*@size_r: size of the buffer
+*Return: the pointer to dest
+*/
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int overflow = 0, i = 0, j = 0, digits = 0;
-int val1 = 0, val2 = 0, temp_tot = 0;
-while (*(n1 + i) != '\0')
-i++;
-while (*(n2 + j) != '\0')
-j++;
-i--;
-j--;
-if (j >= size_r || i >= size_r)
+int c, d, e, f, g, h;
+for (c = 0; n1[c]; c++)
+;
+for (d = 0; n2[d]; d++)
+;
+if (c > size_r || d > size_r)
 return (0);
-while (j >= 0 || i >= 0 || overflow == 1)
+g = 0;
+for (c -= 1, d -= 1, e = 0; e < size_r - 1; c--, d--, e++)
 {
-if (i < 0)
-val1 = 0;
-else
-val1 = *(n1 + i) - '0'
-if (j < 0)
-val2 = 0;
-else
-val2 = *(n2 + j) - '0'
-temp_tot = val1 + val2 + overflow;
-if (temp_tot >= 10)
-overflow = 1;
-else
-overflow = 0;
-if (digits >= (size_r - 1))
-return (0);
-*(r + digits) = (temp_tot % 10) + '0';
-digits++;
-j--;
-i--;
+h = g;
+if (c >= 0)
+h += n1[c] - '0';
+if (d >= 0)
+h += n2[d] - '0';
+if (c < 0 && d < 0 && h == 0)
+{
+break;
 }
-if (digits == size_r)
+g = h / 10;
+r[e] = h % 10 + '0';
+}
+r[e] = '\0';
+if (c >= 0 || d >= 0 || g)
 return (0);
-*(r + digits) = '\0';
-rev_string(r);
+for (e -= 1, f = 0; f < e; e--, f++)
+{
+g = r[e];
+r[e] = r[f];
+r[f] = g;
+}
 return (r);
 }
 
