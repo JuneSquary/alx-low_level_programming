@@ -1,45 +1,41 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_buffer - prints buffer
- * @b: buffer
- * @size: size
- * Return: void
+ *print_buffer - a program that prints a buffer
+ *@b: buffer to print
+ *@size: buffer's size
+ *Return: nothing
  */
 void print_buffer(char *b, int size)
 {
-int o, j, i;
-o = 0;
+int j, k, l;
 if (size <= 0)
-{
 printf("\n");
-return;
-}
-while (o < size)
+else
 {
-j = size - o < 10 ? size - o : 10;
-printf("%08x: ", o);
-for (i = 0; i < 10; i++)
+for (j = 0; j < size; j += 10)
 {
-if (i < j)
-printf("%02x", *(b + o + i));
+printf("%.8x:", j);
+for (k = j; k < j + 10; k++)
+{
+if (k % 2 == 0)
+printf(" ");
+if (k < size)
+printf("%.2x", *(b + k));
 else
 printf(" ");
-if (i % 2)
-{
+}
 printf(" ");
-}
-}
-for (i = 0; i < j; i++)
+for (l = j; l < j + 10; l++)
 {
-int c = *(b + o + i);
-if (c < 32 || c > 132)
-{
-c = '.';
-}
-printf("%c", c);
+if (l >= size)
+break;
+if (*(b + l) < 32 || *(b + l) > 126)
+printf("%c", '.');
+else
+printf("%c", *(b + l));
 }
 printf("\n");
-o += 10;
+}
 }
 }
