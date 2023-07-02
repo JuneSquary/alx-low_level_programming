@@ -7,12 +7,12 @@
  */
 int main(void)
 {
-char low, j, a;
-j = 'j';
-a = 'a';
+char low, e, q;
+e = 'e';
+q = 'q';
 for (low = 'a'; low <= 'z'; low++)
 {
-if (low != j && low != a) 
+if (low != e && low != q) 
 putchar(low);
 }
 putchar('\n');
