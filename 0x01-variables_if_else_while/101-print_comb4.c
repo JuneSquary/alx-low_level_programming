@@ -21,7 +21,6 @@ putchar(p);
 putchar(q);
 if (d == '7' && p == '8')
 continue;
-{
 putchar(',');
 putchar(' ');
 }
