@@ -15,4 +15,3 @@ for (n = size - 1; n <= (size * size) - size; n = n + size - 1)
 sum2 = sum2 + a[n];
 printf("%d, %d\n", sum1, sum2);
 }
-	
