@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-
 /**
  * print_chessboard - Prints the chessboard.
  * @a: The 2D array representing the chessboard.
@@ -9,7 +8,6 @@
  * Each element of the array is printed, followed by a
  * @a: The chessboard represented as a 2D array.
  */
-
 void print_chessboard(char (*a)[8])
 {
 int i, j;
